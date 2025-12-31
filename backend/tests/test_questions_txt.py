@@ -2,7 +2,7 @@ import pytest
 from pathlib import Path
 
 from tools.questions_txt import build_questions_txt_content
-from services.question_catalog import ALL_QUESTIONS
+from services.question_catalog import USER_QUESTION_LIST, FOLLOW_UP_QUESTION_LIST
 
 
 @pytest.mark.asyncio
@@ -10,8 +10,11 @@ async def test_questions_txt_content_has_all_questions_and_responses():
     content = await build_questions_txt_content()
 
     # Every question should appear, and each should have a reasoning type + response section.
-    for q in ALL_QUESTIONS:
+    for q in [*USER_QUESTION_LIST, *FOLLOW_UP_QUESTION_LIST]:
         assert q in content
+
+    # Ensure we have a reasonable set of user questions (20–30+ expected).
+    assert len(USER_QUESTION_LIST) >= 20
 
     assert "Reasoning type:" in content
     assert "Response:" in content

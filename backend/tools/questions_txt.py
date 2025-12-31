@@ -8,7 +8,10 @@ from api.config import settings
 from services.llm_service import LLMService
 from services.rag_service import RAGService
 from services.reasoning_engine import ReasoningEngine
-from services.question_catalog import ALL_QUESTIONS
+from services.question_catalog import (
+    USER_QUESTION_LIST,
+    FOLLOW_UP_QUESTION_LIST,
+)
 
 
 async def build_questions_txt_content() -> str:
@@ -30,11 +33,12 @@ async def build_questions_txt_content() -> str:
     sections.append("# Tech Mentor - Assistant Question List")
     sections.append("")
     sections.append(
-        "This file lists every follow-up question the assistant may ask, and a verified sample response for each."
+        "This file lists questions you can ask the assistant (user prompts) and the follow-up questions the assistant may ask you."
     )
+    sections.append("Every entry below is verified to produce a non-empty response and a `reasoning_type`.")
     sections.append("")
 
-    for idx, question in enumerate(ALL_QUESTIONS, start=1):
+    async def _append_verified_block(kind: str, idx: int, question: str) -> None:
         result = await engine.diagnose_and_solve(
             user_problem=question,
             conversation_history=[],
@@ -44,14 +48,32 @@ async def build_questions_txt_content() -> str:
 
         response_text = (result.get("response") or "").strip()
         reasoning_type = (result.get("reasoning_type") or "").strip()
+        follow_up_question = (result.get("follow_up_question") or "").strip()
 
-        sections.append(f"Q{idx}: {question}")
-        sections.append(f"Reasoning type: {reasoning_type if reasoning_type else '(missing)'}")
+        if not response_text:
+            raise AssertionError(f"Missing response for {kind} Q{idx}: {question}")
+        if not reasoning_type:
+            raise AssertionError(f"Missing reasoning_type for {kind} Q{idx}: {question}")
+
+        sections.append(f"{kind} Q{idx}: {question}")
+        sections.append(f"Reasoning type: {reasoning_type}")
         sections.append("Response:")
-        sections.append(response_text if response_text else "(missing)")
+        sections.append(response_text)
+        sections.append("Assistant follow-up question (if any):")
+        sections.append(follow_up_question if follow_up_question else "(None)")
         sections.append("")
         sections.append("---")
         sections.append("")
+
+    sections.append("## User Questions")
+    sections.append("")
+    for idx, question in enumerate(USER_QUESTION_LIST, start=1):
+        await _append_verified_block("User", idx, question)
+
+    sections.append("## Assistant Follow-up Questions")
+    sections.append("")
+    for idx, question in enumerate(FOLLOW_UP_QUESTION_LIST, start=1):
+        await _append_verified_block("Follow-up", idx, question)
 
     return "\n".join(sections).rstrip() + "\n"
 

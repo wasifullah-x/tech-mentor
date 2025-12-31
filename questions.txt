@@ -1,8 +1,1039 @@
 # Tech Mentor - Assistant Question List
 
-This file lists every follow-up question the assistant may ask, and a verified sample response for each.
+This file lists questions you can ask the assistant (user prompts) and the follow-up questions the assistant may ask you.
+Every entry below is verified to produce a non-empty response and a `reasoning_type`.
 
-Q1: What can I help you fix today?
+## User Questions
+
+User Q1: Hi
+Reasoning type: onboarding
+Response:
+Hi! I can help troubleshoot tech issues.
+
+Tell me what’s going wrong and I’ll walk you through it. If you can, include:
+- Your device type (laptop/desktop/phone/printer, etc.)
+- Your OS (Windows/macOS/Android/iOS/Linux)
+- Any exact error message
+
+Example: ‘My Windows laptop can’t connect to Wi‑Fi after an update.’
+Assistant follow-up question (if any):
+What can I help you fix today?
+
+---
+
+User Q2: My Wi‑Fi won’t connect on my Windows laptop.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+My Wi‑Fi won’t connect on my Windows laptop.
+
+2. **Likely Causes**
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Check if power adapter LED is lit and connections are secure
+   - Why: Verifies power is reaching the laptop
+2. Remove battery (if removable) and hold power button for 30 seconds, then reconnect
+   - Why: Performs a hard reset to clear residual power
+3. Try a different power outlet and adapter if available
+   - Why: Rules out faulty outlet or adapter
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q3: Internet keeps disconnecting every few minutes.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+Internet keeps disconnecting every few minutes.
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q4: My PC is running very slow after the last update.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+Computer performance issues - slow/freezing
+
+2. **Likely Causes**
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+- Full startup disk (high): Common issue for Mac showing spinning wheel frequently
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+
+3. **Step-by-Step Solution**
+1. Open Task Manager (Ctrl+Shift+Esc) and check CPU/Memory usage
+   - Why: Identifies which programs are consuming resources
+2. Disable unnecessary startup programs via Task Manager > Startup tab
+   - Why: Reduces programs running in background
+3. Free up disk space by removing temporary files using Disk Cleanup
+   - Why: More free space improves system performance
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q5: My laptop freezes randomly when I open Chrome.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+Computer performance issues - slow/freezing
+
+2. **Likely Causes**
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+- Full startup disk (high): Common issue for Mac showing spinning wheel frequently
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+
+3. **Step-by-Step Solution**
+1. Open Task Manager (Ctrl+Shift+Esc) and check CPU/Memory usage
+   - Why: Identifies which programs are consuming resources
+2. Disable unnecessary startup programs via Task Manager > Startup tab
+   - Why: Reduces programs running in background
+3. Free up disk space by removing temporary files using Disk Cleanup
+   - Why: More free space improves system performance
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q6: I got a blue screen (BSOD) and it restarted—what should I do?
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+Blue Screen of Death (BSOD) - system crash
+
+2. **Likely Causes**
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Note down the error code from the blue screen (e.g., DRIVER_IRQL_NOT_LESS_OR_EQUAL)
+   - Why: Error codes help identify the specific problem
+2. Boot in Safe Mode by restarting and pressing F8
+   - Why: Safe Mode loads only essential drivers, helping isolate the problem
+3. Update or rollback recently installed drivers
+   - Why: Incompatible drivers are a common cause of BSODs
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q7: The BSOD says DRIVER_IRQL_NOT_LESS_OR_EQUAL.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+Blue Screen of Death (BSOD) - system crash
+
+2. **Likely Causes**
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Note down the error code from the blue screen (e.g., DRIVER_IRQL_NOT_LESS_OR_EQUAL)
+   - Why: Error codes help identify the specific problem
+2. Boot in Safe Mode by restarting and pressing F8
+   - Why: Safe Mode loads only essential drivers, helping isolate the problem
+3. Update or rollback recently installed drivers
+   - Why: Incompatible drivers are a common cause of BSODs
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q8: My printer is connected but not printing anything.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+Printer not printing
+
+2. **Likely Causes**
+- Printer offline (high): Common issue for Printer not printing
+- Paper jam (high): Common issue for Printer not printing
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Check if printer is showing as 'Online' in Devices and Printers
+   - Why: Printer must be online to accept print jobs
+2. Clear the print queue by canceling all documents
+   - Why: Stuck documents can block new print jobs
+3. Restart the printer and reconnect USB cable or Wi-Fi
+   - Why: Resets the connection between computer and printer
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q9: My printer shows Offline and jobs are stuck in the queue.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+My printer shows Offline and jobs are stuck in the queue.
+
+2. **Likely Causes**
+- Printer offline (high): Common issue for Printer not printing
+- Paper jam (high): Common issue for Printer not printing
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Check if printer is showing as 'Online' in Devices and Printers
+   - Why: Printer must be online to accept print jobs
+2. Clear the print queue by canceling all documents
+   - Why: Stuck documents can block new print jobs
+3. Restart the printer and reconnect USB cable or Wi-Fi
+   - Why: Resets the connection between computer and printer
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q10: My phone battery is draining fast even when I’m not using it.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+Battery draining quickly
+
+2. **Likely Causes**
+- Background apps consuming power (high): Common issue for Phone battery draining fast
+- Screen brightness too high (high): Common issue for Phone battery draining fast
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Check battery usage in Settings > Battery to identify power-hungry apps
+   - Why: Shows which apps are consuming the most battery
+2. Reduce screen brightness and enable adaptive brightness
+   - Why: Display is typically the biggest battery consumer
+3. Disable unnecessary background app refresh and location services
+   - Why: Apps running in background drain battery even when not in use
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q11: My Android phone won’t charge past 20%.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+My Android phone won’t charge past 20%.
+
+2. **Likely Causes**
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+- Background apps consuming power (high): Common issue for Phone battery draining fast
+- Screen brightness too high (high): Common issue for Phone battery draining fast
+
+3. **Step-by-Step Solution**
+1. Check if power adapter LED is lit and connections are secure
+   - Why: Verifies power is reaching the laptop
+2. Remove battery (if removable) and hold power button for 30 seconds, then reconnect
+   - Why: Performs a hard reset to clear residual power
+3. Try a different power outlet and adapter if available
+   - Why: Rules out faulty outlet or adapter
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q12: I forgot my Windows password and I’m locked out.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+Password recovery - locked out
+
+2. **Likely Causes**
+- Password forgotten or mistyped (high): Common issue for Forgot Windows password
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Too many startup programs (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if Caps Lock is on - password is case-sensitive
+   - Why: Common mistake that prevents login
+2. Use 'I forgot my password' link on login screen for Microsoft accounts
+   - Why: Microsoft provides password reset via email or phone
+3. For local accounts, use password reset disk if created previously
+   - Why: Password reset disk can restore access to local accounts
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q13: I can’t send emails from Outlook—messages stay in Outbox.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+I can’t send emails from Outlook—messages stay in Outbox.
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q14: I’m not receiving any emails on my phone.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+I’m not receiving any emails on my phone.
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Printer offline (high): Common issue for Printer not printing
+- Paper jam (high): Common issue for Printer not printing
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q15: Windows Update is stuck at 0% for hours.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+Software update failure
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q16: My software update fails with an error.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+Software update failure
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q17: I think my computer has a virus—lots of popups and it’s slow.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+Computer performance issues - slow/freezing
+
+2. **Likely Causes**
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+- Full startup disk (high): Common issue for Mac showing spinning wheel frequently
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+
+3. **Step-by-Step Solution**
+1. Open Task Manager (Ctrl+Shift+Esc) and check CPU/Memory usage
+   - Why: Identifies which programs are consuming resources
+2. Disable unnecessary startup programs via Task Manager > Startup tab
+   - Why: Reduces programs running in background
+3. Free up disk space by removing temporary files using Disk Cleanup
+   - Why: More free space improves system performance
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q18: My browser keeps redirecting to weird sites.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+My browser keeps redirecting to weird sites.
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q19: My computer won’t turn on at all—no lights.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+My computer won’t turn on at all—no lights.
+
+2. **Likely Causes**
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+- Too many startup programs (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if power adapter LED is lit and connections are secure
+   - Why: Verifies power is reaching the laptop
+2. Remove battery (if removable) and hold power button for 30 seconds, then reconnect
+   - Why: Performs a hard reset to clear residual power
+3. Try a different power outlet and adapter if available
+   - Why: Rules out faulty outlet or adapter
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q20: My laptop is overheating and the fan is very loud.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+My laptop is overheating and the fan is very loud.
+
+2. **Likely Causes**
+- Password forgotten or mistyped (high): Common issue for Forgot Windows password
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+- Too many startup programs (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if Caps Lock is on - password is case-sensitive
+   - Why: Common mistake that prevents login
+2. Use 'I forgot my password' link on login screen for Microsoft accounts
+   - Why: Microsoft provides password reset via email or phone
+3. For local accounts, use password reset disk if created previously
+   - Why: Password reset disk can restore access to local accounts
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q21: There’s no sound coming from my laptop speakers.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+There’s no sound coming from my laptop speakers.
+
+2. **Likely Causes**
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Check if power adapter LED is lit and connections are secure
+   - Why: Verifies power is reaching the laptop
+2. Remove battery (if removable) and hold power button for 30 seconds, then reconnect
+   - Why: Performs a hard reset to clear residual power
+3. Try a different power outlet and adapter if available
+   - Why: Rules out faulty outlet or adapter
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q22: My microphone isn’t working in Zoom.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+My microphone isn’t working in Zoom.
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q23: My webcam is not detected.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+My webcam is not detected.
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Printer offline (high): Common issue for Printer not printing
+- Paper jam (high): Common issue for Printer not printing
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q24: Bluetooth won’t connect to my headphones.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+Bluetooth won’t connect to my headphones.
+
+2. **Likely Causes**
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+
+3. **Step-by-Step Solution**
+1. Check if Wi-Fi is enabled on your device
+   - Why: Wi-Fi might be disabled via airplane mode or physical switch
+2. Restart your Wi-Fi router by unplugging it for 30 seconds
+   - Why: Clears temporary glitches in the router
+3. Forget the network and reconnect with the correct password
+   - Why: Removes corrupted network settings
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q25: My keyboard types the wrong characters.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+My keyboard types the wrong characters.
+
+2. **Likely Causes**
+- Password forgotten or mistyped (high): Common issue for Forgot Windows password
+- Background apps consuming power (high): Common issue for Phone battery draining fast
+- Screen brightness too high (high): Common issue for Phone battery draining fast
+- Insufficient RAM (high): Common issue for Mac showing spinning wheel frequently
+
+3. **Step-by-Step Solution**
+1. Check if Caps Lock is on - password is case-sensitive
+   - Why: Common mistake that prevents login
+2. Use 'I forgot my password' link on login screen for Microsoft accounts
+   - Why: Microsoft provides password reset via email or phone
+3. For local accounts, use password reset disk if created previously
+   - Why: Password reset disk can restore access to local accounts
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q26: My external hard drive isn’t showing up.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+My external hard drive isn’t showing up.
+
+2. **Likely Causes**
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+- Insufficient RAM (high): Common issue for Mac showing spinning wheel frequently
+- Full startup disk (high): Common issue for Mac showing spinning wheel frequently
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Note down the error code from the blue screen (e.g., DRIVER_IRQL_NOT_LESS_OR_EQUAL)
+   - Why: Error codes help identify the specific problem
+2. Boot in Safe Mode by restarting and pressing F8
+   - Why: Safe Mode loads only essential drivers, helping isolate the problem
+3. Update or rollback recently installed drivers
+   - Why: Incompatible drivers are a common cause of BSODs
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q27: I’m running out of disk space—how do I free it up?
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+I’m running out of disk space—how do I free it up?
+
+2. **Likely Causes**
+- Password forgotten or mistyped (high): Common issue for Forgot Windows password
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Check if Caps Lock is on - password is case-sensitive
+   - Why: Common mistake that prevents login
+2. Use 'I forgot my password' link on login screen for Microsoft accounts
+   - Why: Microsoft provides password reset via email or phone
+3. For local accounts, use password reset disk if created previously
+   - Why: Password reset disk can restore access to local accounts
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q28: My PC is very slow to boot.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+Computer performance issues - slow/freezing
+
+2. **Likely Causes**
+- Too many startup programs (high): Common issue for Computer running very slow
+- Insufficient RAM (high): Common issue for Computer running very slow
+- Full startup disk (high): Common issue for Mac showing spinning wheel frequently
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+
+3. **Step-by-Step Solution**
+1. Open Task Manager (Ctrl+Shift+Esc) and check CPU/Memory usage
+   - Why: Identifies which programs are consuming resources
+2. Disable unnecessary startup programs via Task Manager > Startup tab
+   - Why: Reduces programs running in background
+3. Free up disk space by removing temporary files using Disk Cleanup
+   - Why: More free space improves system performance
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+User Q29: My screen is flickering on Windows.
+Reasoning type: rag+deterministic_fallback+asked_follow_up
+Response:
+1. **Problem Understanding**
+My screen is flickering on Windows.
+
+2. **Likely Causes**
+- Password forgotten or mistyped (high): Common issue for Forgot Windows password
+- Driver conflicts (high): Common issue for Blue Screen of Death (BSOD)
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+
+3. **Step-by-Step Solution**
+1. Check if Caps Lock is on - password is case-sensitive
+   - Why: Common mistake that prevents login
+2. Use 'I forgot my password' link on login screen for Microsoft accounts
+   - Why: Microsoft provides password reset via email or phone
+3. For local accounts, use password reset disk if created previously
+   - Why: Password reset disk can restore access to local accounts
+
+4. **Next Steps**
+If these steps don't resolve the issue, please let me know:
+1. Which step you completed
+2. What happened when you tried it
+3. Any error messages you saw
+
+I'll provide more advanced troubleshooting steps.
+
+5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+
+---
+
+User Q30: My laptop is smoking.
+Reasoning type: rag+deterministic_fallback+no_follow_up
+Response:
+1. **Problem Understanding**
+My laptop is smoking.
+
+2. **Likely Causes**
+- Dead battery (high): Common issue for Laptop won't turn on
+- Power adapter failure (high): Common issue for Laptop won't turn on
+- Wi-Fi adapter disabled (high): Common issue for Wi-Fi not connecting
+- Wrong password (high): Common issue for Wi-Fi not connecting
+
+3. **Step-by-Step Solution**
+1. Check if power adapter LED is lit and connections are secure
+   - Why: Verifies power is reaching the laptop
+2. Remove battery (if removable) and hold power button for 30 seconds, then reconnect
+   - Why: Performs a hard reset to clear residual power
+3. Try a different power outlet and adapter if available
+   - Why: Rules out faulty outlet or adapter
+
+4. **Next Steps**
+If these steps don't resolve the issue, I recommend contacting a professional technician. The problem may require hardware repair or specialized tools.
+
+5. **Follow-up Question**
+(None)
+Assistant follow-up question (if any):
+(None)
+
+---
+
+## Assistant Follow-up Questions
+
+Follow-up Q1: What can I help you fix today?
 Reasoning type: rag+deterministic_fallback+asked_follow_up
 Response:
 1. **Problem Understanding**
@@ -32,10 +1063,12 @@ I'll provide more advanced troubleshooting steps.
 
 5. **Follow-up Question**
 What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
 
 ---
 
-Q2: Quick clarifier: what device/OS is this on, and what exactly happens (any exact error message)?
+Follow-up Q2: Quick clarifier: what device/OS is this on, and what exactly happens (any exact error message)?
 Reasoning type: rag+deterministic_fallback+asked_follow_up
 Response:
 1. **Problem Understanding**
@@ -65,10 +1098,12 @@ I'll provide more advanced troubleshooting steps.
 
 5. **Follow-up Question**
 What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
 
 ---
 
-Q3: What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Follow-up Q3: What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
 Reasoning type: rag+deterministic_fallback+no_follow_up
 Response:
 1. **Problem Understanding**
@@ -98,10 +1133,12 @@ I'll provide more advanced troubleshooting steps.
 
 5. **Follow-up Question**
 (None)
+Assistant follow-up question (if any):
+(None)
 
 ---
 
-Q4: What operating system are you using? (Windows, macOS, Android, iOS, Linux)
+Follow-up Q4: What operating system are you using? (Windows, macOS, Android, iOS, Linux)
 Reasoning type: rag+deterministic_fallback+asked_follow_up
 Response:
 1. **Problem Understanding**
@@ -130,6 +1167,8 @@ If these steps don't resolve the issue, please let me know:
 I'll provide more advanced troubleshooting steps.
 
 5. **Follow-up Question**
+What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
+Assistant follow-up question (if any):
 What type of device is this (laptop/desktop/phone/printer), and what OS are you using?
 
 ---
